@@ -1,0 +1,104 @@
+/* style.css ── 請書アプリの見た目（最小限だが実用的に） */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  background: #f4f6f8;
+  color: #222;
+}
+
+.wrap {
+  max-width: 820px;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+
+h1 {
+  font-size: 22px;
+  border-left: 6px solid #2f6fed;
+  padding-left: 12px;
+}
+
+/* --- フォーム --- */
+fieldset {
+  border: 1px solid #d6dbe1;
+  border-radius: 10px;
+  background: #fff;
+  padding: 20px;
+}
+
+.field { margin-bottom: 14px; }
+
+.field label {
+  display: block;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.field input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #c3c9d1;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+button {
+  background: #2f6fed;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-size: 15px;
+  cursor: pointer;
+}
+button:hover { background: #2559c9; }
+
+.link { color: #2f6fed; text-decoration: none; }
+.link:hover { text-decoration: underline; }
+
+/* --- メッセージ --- */
+.msg {
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.msg-ok { background: #e3f6e8; color: #1c6b34; }
+.msg-ng { background: #fde5e5; color: #9b2020; }
+
+/* --- 一覧テーブル --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+}
+
+th, td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #eceff2;
+  text-align: left;
+  font-size: 14px;
+}
+
+thead th {
+  background: #2f6fed;
+  color: #fff;
+  font-weight: 600;
+}
+
+tbody tr:hover { background: #f7f9ff; }
+
+td.num { text-align: right; font-variant-numeric: tabular-nums; }
