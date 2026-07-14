@@ -24,13 +24,16 @@ foreach ($result as $record) {
   $subject  = htmlspecialchars($record["subject"],  ENT_QUOTES, 'UTF-8');
   $amount   = number_format((int)$record["amount"]); // 3 桁区切り
   $deadline = htmlspecialchars($record["deadline"],  ENT_QUOTES, 'UTF-8');
+  $id = (int)$record["id"]; // id は数値なのでキャストしてそのまま使う
   $output .= "
     <tr>
-      <td>{$record["id"]}</td>
+      <td>{$id}</td>
       <td>{$customer}</td>
       <td>{$subject}</td>
       <td class=\"num\">&yen;{$amount}</td>
       <td>{$deadline}</td>
+      <td><a class=\"link\" href=\"seisho_edit.php?id={$id}\">編集</a></td>
+      <td><a class=\"link link-del\" href=\"seisho_delete.php?id={$id}\" onclick=\"return confirm('この請書を削除します。よろしいですか？');\">削除</a></td>
     </tr>
   ";
 }
@@ -56,6 +59,8 @@ foreach ($result as $record) {
           <th>件名</th>
           <th>金額</th>
           <th>納期</th>
+          <th>編集</th>
+          <th>削除</th>
         </tr>
       </thead>
       <tbody>

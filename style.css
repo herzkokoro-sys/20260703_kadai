@@ -66,6 +66,7 @@ button:hover { background: #2559c9; }
 
 .link { color: #2f6fed; text-decoration: none; }
 .link:hover { text-decoration: underline; }
+.link-del { color: #c0392b; }
 
 /* --- メッセージ --- */
 .msg {
