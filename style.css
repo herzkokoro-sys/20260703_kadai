@@ -68,6 +68,24 @@ button:hover { background: #2559c9; }
 .link:hover { text-decoration: underline; }
 .link-del { color: #c0392b; }
 
+/* --- ログイン中ユーザの表示（PHP04） --- */
+.userbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #555;
+}
+.userbar .link { margin-left: auto; }
+
+.badge {
+  background: #2f6fed;
+  color: #fff;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 11px;
+}
+
 /* --- メッセージ --- */
 .msg {
   padding: 10px 14px;

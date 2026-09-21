@@ -1,6 +1,11 @@
 <?php
 // seisho_update.php ── 請書の更新処理（DB を UPDATE）。画面表示はしない。
 
+// --- ログインしていない人はここで弾く（PHP04） ---
+session_start();
+require_once 'functions.php';
+check_session_id();
+
 // 1) POST 以外で直接アクセスされたら一覧へ戻す
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
   header('Location: seisho_read.php');

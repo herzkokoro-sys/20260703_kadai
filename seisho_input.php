@@ -1,5 +1,11 @@
 <?php
 // seisho_input.php ── 請書の作成画面（入力フォーム）
+
+// --- ログインしていない人はここで弾く（PHP04） ---
+session_start();
+require_once 'functions.php';
+check_session_id();
+
 // create.php から戻ってきたときに ?done / ?error が付くので、その表示だけ判定する
 $done  = isset($_GET['done']);
 $error = isset($_GET['error']);

@@ -1,6 +1,11 @@
 <?php
 // seisho_create.php ── 請書の作成処理（DB へ INSERT）。画面表示はしない。
 
+// --- ログインしていない人はここで弾く（PHP04） ---
+session_start();
+require_once 'functions.php';
+check_session_id();
+
 // 1) POST 以外で直接アクセスされたら入力画面へ戻す
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
   header('Location: seisho_input.php');

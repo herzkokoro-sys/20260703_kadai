@@ -1,6 +1,11 @@
 <?php
 // seisho_edit.php ── 請書の編集画面（id で 1 件取得してフォームに初期値を表示）
 
+// --- ログインしていない人はここで弾く（PHP04） ---
+session_start();
+require_once 'functions.php';
+check_session_id();
+
 // 1) URL の ?id= を受け取る（無ければ一覧へ戻す）
 $id = $_GET['id'] ?? '';
 if ($id === '') {

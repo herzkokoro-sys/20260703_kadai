@@ -2,6 +2,11 @@
 // seisho_delete.php ── 請書の削除処理（DB から DELETE）。画面表示はしない。
 // 一覧の「削除」リンク（?id=◯）から呼ばれる。
 
+// --- ログインしていない人はここで弾く（PHP04） ---
+session_start();
+require_once 'functions.php';
+check_session_id();
+
 // 1) id を受け取る（無ければ一覧へ戻す）
 $id = $_GET['id'] ?? '';
 if ($id === '') {
